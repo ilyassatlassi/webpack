@@ -1,24 +1,22 @@
 import './style.css';
 
 const list = document.getElementById('listtodo');
-const add = document.getElementById('add');
-console.log(add)
 
-let todoList = [
+const todoList = [
   {
-    index:0,
-    description:"wash the dishes",
-    completed: false
+    index: 0,
+    description: 'wash the dishes',
+    completed: false,
   },
   {
-    index:1,
-    description:"wash the dishes",
-    completed: false
-  }
+    index: 1,
+    description: 'wash the dishes',
+    completed: false,
+  },
 ];
 
 const showList = () => {
-  let listItems = "";
+  let listItems = '';
   todoList.forEach((element) => {
     listItems += `<li class="task">
                                   <div>
@@ -30,10 +28,9 @@ const showList = () => {
                                   <i class="fa-solid fa-floppy-disk save hide box" id="save${element.index}"></i>
                                   <i id="removeicon"  class="fa-solid fa-trash"></i>
                                   </div>
-                          </li>`
-  })
+                          </li>`;
+  });
   list.innerHTML = listItems;
-  add.value = ''
-}
+};
 
-showList()
+showList();
