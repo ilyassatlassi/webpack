@@ -1,4 +1,4 @@
-/* eslint-disable  */
+
 import './style.css';
 
 const list = document.getElementById('listtodo');
@@ -47,7 +47,7 @@ const showList = () => {
 showList();
 
 add.addEventListener("keypress", (e) => {
-  if (e.key === "Enter" && add.value.length != 0) {
+  if (e.key === "Enter" && inputAdd.value.length !== 0) {
       let storedList = localStorage.getItem("todo");
 
       if (storedList === null) {
@@ -76,14 +76,61 @@ window.onload = () => {
   showList()
 };
   
+window.editFunc = (index) => {
+  const edit = document.getElementById("edit" + index + "");
+  const save = document.getElementById("save" + index + "");
+
+  save.style.display = "flex";
+  edit.style.display = "none";
+  const mainItem = document.getElementById("item" + index + "");
+  mainItem.removeAttribute("readonly");
+  const length = mainItem.value.length;
+  mainItem.setSelectionRange(length, length);
+  mainItem.focus();
+  return mainItem;
+};
+
+window.saveFunc = (index) => {
+  const edit = document.getElementById("edit" + index + "");
+  const save = document.getElementById("save" + index + "");
+
+  save.style.display = "none";
+  edit.style.display = "flex";
+
+  const mainItem = document.getElementById("item" + index + "");
+  let storedData = localStorage.getItem("todo");
+  todoList = JSON.parse(storedData);
+  todoList[index].description = mainItem.value;
+
+  localStorage.setItem("todo-list", JSON.stringify(todoList));
+  showList()
+};
+
 window.removeFunc = (index) => {
   let storedData = localStorage.getItem("todo");
   todoList = JSON.parse(storedData);
   todoList.splice(index, 1);
-  for (let i = 0; i < todoList.length; i++) {
+  for (let i = 0; i < todoList.length; i += 1) {
       todoList[i].index = i;
   }
   localStorage.setItem("todo", JSON.stringify(todoList));
   showList()
 };
 
+window.checkFunc = (index) => {
+  const CheckCheck = document.getElementById(`check${index}`);
+  if (CheckCheck.checked == true) {
+    let storedData = localStorage.getItem("todo");
+    todoList = JSON.parse(storedData);
+    todoList[index].completed = true;
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    showList();
+  }
+  else {
+    let storedData = localStorage.getItem("todo");
+    todoList = JSON.parse(storedData);
+    todoList[index].completed = false;
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    showList();
+  }
+}
