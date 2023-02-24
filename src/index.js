@@ -1,18 +1,19 @@
 import './style.css';
 
 const list = document.getElementById('listtodo');
+const add = document.getElementById('add');
 
 const todoList = [
-  {
-    index: 0,
-    description: 'wash the dishes',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'wash the dishes',
-    completed: false,
-  },
+  // {
+  //   index: 0,
+  //   description: 'wash the dishes',
+  //   completed: false,
+  // },
+  // {
+  //   index: 1,
+  //   description: 'wash the dishes',
+  //   completed: false,
+  // },
 ];
 
 const showList = () => {
@@ -34,3 +35,15 @@ const showList = () => {
 };
 
 showList();
+
+add.addEventListener('keypress',() => {
+  if (e.key === "Enter" && add.value.length != 0) {
+    let storedList = localStorage.getItem("todo");
+
+    if (storedList === null) {
+      todoList = [];
+  } else {
+      todoList = JSON.parse(storedList);
+  }
+  }
+})
