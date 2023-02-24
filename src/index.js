@@ -3,18 +3,7 @@ import './style.css';
 const list = document.getElementById('listtodo');
 const add = document.getElementById('add');
 
-const todoList = [
-  // {
-  //   index: 0,
-  //   description: 'wash the dishes',
-  //   completed: false,
-  // },
-  // {
-  //   index: 1,
-  //   description: 'wash the dishes',
-  //   completed: false,
-  // },
-];
+let todoList = [];
 
 const showList = () => {
   let listItems = '';
@@ -27,23 +16,35 @@ const showList = () => {
                                   <div class = "tools">
                                   <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}"></i>
                                   <i class="fa-solid fa-floppy-disk save hide box" id="save${element.index}"></i>
-                                  <i id="removeicon"  class="fa-solid fa-trash"></i>
+                                  <i id="removeicon"  onclick="removeFunc(${element.index});" class="fa-solid fa-trash"></i>
                                   </div>
                           </li>`;
   });
   list.innerHTML = listItems;
+  add.value = ''
 };
 
 showList();
-
-add.addEventListener('keypress',() => {
+console.log(add)
+add.addEventListener("keypress",(e) => {
   if (e.key === "Enter" && add.value.length != 0) {
     let storedList = localStorage.getItem("todo");
 
-    if (storedList === null) {
+  if (storedList === null) {
       todoList = [];
   } else {
       todoList = JSON.parse(storedList);
   }
+
+  const LocalStore = {
+    index: Date.now(),
+    description: add.value,
+    completed: false,
+  };
+  todoList.push(LocalStore);
+  localStorage.setItem("todo", JSON.stringify(todoList));
+  console.log(storedList)
+  showList();
+  console.log(LocalStore)
   }
 })
