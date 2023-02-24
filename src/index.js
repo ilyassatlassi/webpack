@@ -25,7 +25,9 @@ const showList = () => {
 };
 
 showList();
-console.log(add)
+
+
+// Adding function
 add.addEventListener("keypress",(e) => {
   if (e.key === "Enter" && add.value.length != 0) {
     let storedList = localStorage.getItem("todo");
@@ -43,8 +45,30 @@ add.addEventListener("keypress",(e) => {
   };
   todoList.push(LocalStore);
   localStorage.setItem("todo", JSON.stringify(todoList));
-  console.log(storedList)
   showList();
-  console.log(LocalStore)
   }
 })
+
+// call the data from the locale storage
+
+window.onload = () => {
+  if (localStorage.getItem("todo")) {
+      todoList = JSON.parse(localStorage.getItem("todo"));
+  }
+  showList()
+};
+
+// Remove function
+
+window.removeFunc = (index) => {
+  let storedData = localStorage.getItem("todo");
+  todoList = JSON.parse(storedData);
+  console.log(todoList)
+  
+  todoList.splice(index, 1);
+  console.log(index)
+
+  localStorage.setItem("todo", JSON.stringify(todoList));
+  showList()
+};
+
