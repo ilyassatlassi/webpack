@@ -42,3 +42,26 @@ const showList = () => {
 };
 
 showList();
+// Add function
+add.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && add.value.length !== 0) {
+    const storedList = localStorage.getItem('todo');
+
+    if (storedList === null) {
+      todoList = [];
+    } else {
+      todoList = JSON.parse(storedList);
+      index = todoList.length === 0 ? 0 : todoList.length;
+    }
+
+    const LocalStore = {
+      index,
+      description: add.value,
+      completed,
+    };
+    todoList.push(LocalStore);
+    localStorage.setItem('todo', JSON.stringify(todoList));
+    showList();
+  }
+});
+
