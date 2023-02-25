@@ -1,118 +1,100 @@
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
+# To Do List 📝
 
 <div align="center">
 
-
-  <h3><b>Microverse README Template</b></h3>
+  <img src="murple_logo.png" alt="logo" width="120"  height="auto"/>
+  <br/>
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
+## A solo programming project that heighlights the use of webpack to bundle JavaScript, ES6 syntax
 
-# 📗 Table of Contents
+# 🛠 Built With
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [📝 License](#license)
+### Tech Stack
 
-<!-- PROJECT DESCRIPTION -->
+- HTML5.
+- CSS3.
+- Javascript using ES6.
+- Webpack.
 
-# 📖 [Awsome-book] <a name="about-project"></a>
+### Client
 
-TODO List In this project, we made a basic website that allows users to add/remove books from a list. we achieved that by using JavaScript classes. we also dynamically modified the DOM and added basic events.
-
-
-## 🛠 Built With <a name="built-with"></a>
-
-- HTML
-- CSS
-- JavaScript
+- HTML.
+- CSS.
+- JS.
 - Webpack
 
+# 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- Features -->
+[To Do List 📝]()
 
-### Key Features <a name="key-features"></a>
+### Server
 
-> Describe between 1-3 key features of the application.
+- local.
 
-- **[Add and Remove the book]**
-- **[Storage in Local Storage]**
-- **[Create with JavaScript ES6]**
+### Database
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- N/A.
 
+# Key Features
 
-<!-- GETTING STARTED -->
+- HTML5 semantics.
+- CSS3.
+- Javascript OOP, ES6.
+- Webpack.
 
-## 💻 Getting Started <a name="getting-started"></a>
+# 💻 Getting Started
 
+### To get a local copy up and running, follow these steps
 
-To get a local copy up and running, follow these steps.
+1. Installed Git.
+2. Create a local directory that you want to clone the repository.
+3. Open the command prompt in the created directory.
+4. On the terminal run this command git clone https://github.com/ilyassatlassi/webpack.git
+5. Install the dev dependencies for linters run npm install.
+6. run: ```npm  i --save-dev webpack webpack-cli webpack-dev-server @babel/core @babel/preset-env babel-loader style-loader css-loader sass-loader html-webpack-plugin mini-css-extract-plugin ```
 
+After Installing all the packages run this command ``` npm run start ``` to start dev server and you can just press ```Ctrl + C``` in the terminal and that will kill it and run ``` npm run build ``` to creates a build directory with a production build of your app . 
+# Prerequisites
 
-### Setup
+### In order to run this project you need
 
-Clone this repository to your desired folder:
+- Installed Git.
+- A browser.
 
-```sh
-  cd my-folder
-  git clone https://github.com/ilyassatlassi/webpack.git
-```
--
+# Setup
 
-### Install
+- Clone this repository to your desired folder.
 
-Install this project with:
-This is not recommad but you can check the linterc error in your local pc
+# Install
 
-<!--
-Example command:
---->
-```sh
-  cd my-project
-  npm install --save-dev hint@7.x
-```
+### Install this project with
 
+- Git.
+- Github.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+# Usage
 
-<!-- AUTHORS -->
+### To run the project, execute the following command
 
-## 👥 Authors <a name="authors"></a>
+- git clone <https://github.com/ilyassatlassi/webpack.git>
+- cd To-Do-List
 
-> Mention all of the collaborators of this project.
+# Run tests
+
+### To run tests, run the following command
+
+- npx eslint .
+- npx stylelint "**/*.{css,scss}"
+
+# Deployment
+
+### You can deploy this project using
+
+- Github pages.
+
+# 👥 Authors
 
 👤 ilyass atlassi
 
@@ -120,47 +102,35 @@ Example command:
 - Twitter: [@twitterhandle](https://twitter.com/ilyass_atlassi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ilyassatlassi/)
 
+# 🔭 Future Features
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Use advanced JS data structures.
+- Implement some awesome animations and transitions to the design.
+- Integrate back-end.
 
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
+# 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
 
-Feel free to check the [issues page](../../issues/).
+# ⭐️ Show your support
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+If you like this project kindly send to me an e-mail expressing it, it would make my day and fuel my motivation.
 
-<!-- SUPPORT -->
+# 🙏 Acknowledgments
 
-## ⭐️ Show your support <a name="support"></a>
+I would like to thank Microverse team for this journey.
 
-> Write a message to encourage readers to support your project
+# ❓ FAQ
 
-If you like this project...
+### How do I clone this with all the un-merged branches?
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Kindly check the branches names in github then add them manually on your local machine, after that you may just pull the changes.
 
-<!-- ACKNOWLEDGEMENTS -->
+### How to access the database?
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+- It's not available for now I'm still working on it, once it's available I'll update this answer.
 
-> Give credit to everyone who inspired your codebase.
+# 📝 License
 
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](https://github.com/ilyassatlassi/portfolio_setup_mobile/blob/main/LICENCE.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This project is MIT licensed.
