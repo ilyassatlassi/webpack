@@ -1,4 +1,3 @@
-
 const list = document.getElementById('listtodo');
 const add = document.getElementById('add');
 
@@ -135,16 +134,16 @@ window.checkFunc = (index) => {
 };
 
 // add selectet function
-const clean = document.querySelector(".clean");
+const clean = document.querySelector('.clean');
 
-clean.addEventListener('click', ()=>{
-    let storedData = localStorage.getItem("todo");
-      todoList = JSON.parse(storedData);
-      let clearDone = todoList.filter((element) => element.completed === false);
-      todoList = clearDone;
-      for(let i=0;i<todoList.length;i++){
-        todoList[i].index = i;
-      }
-      localStorage.setItem("todo", JSON.stringify(todoList));
-      showList();
-})
+clean.addEventListener('click', () => {
+  const storedData = localStorage.getItem('todo');
+  todoList = JSON.parse(storedData);
+  const clearDone = todoList.filter((element) => element.completed === false);
+  todoList = clearDone;
+  for (let i = 0; i < todoList.length; i = +1) {
+    todoList[i].index = i;
+  }
+  localStorage.setItem('todo', JSON.stringify(todoList));
+  showList();
+});
