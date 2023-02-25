@@ -65,3 +65,11 @@ add.addEventListener('keypress', (e) => {
   }
 });
 
+// Call data from local storage
+window.onload = () => {
+  if (localStorage.getItem('todo')) {
+    todoList = JSON.parse(localStorage.getItem('todo'));
+  }
+  showList();
+};
+
