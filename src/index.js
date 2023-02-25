@@ -73,3 +73,18 @@ window.onload = () => {
   showList();
 };
 
+// edit todolist
+window.editFunc = (index) => {
+  const edit = document.getElementById(`edit${index}`);
+  const save = document.getElementById(`save${index}`);
+
+  save.style.display = 'flex';
+  edit.style.display = 'none';
+  const mainItem = document.getElementById(`item${index}`);
+  mainItem.removeAttribute('readonly');
+  const { length } = mainItem.value;
+  mainItem.setSelectionRange(length, length);
+  mainItem.focus();
+  return mainItem;
+};
+
