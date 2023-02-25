@@ -88,3 +88,19 @@ window.editFunc = (index) => {
   return mainItem;
 };
 
+// Save function after editing
+window.saveFunc = (index) => {
+  const edit = document.getElementById(`edit${index}`);
+  const save = document.getElementById(`save${index}`);
+
+  save.style.display = 'none';
+  edit.style.display = 'flex';
+
+  const mainItem = document.getElementById(`item${index}`);
+  const storedData = localStorage.getItem('todo');
+  todoList = JSON.parse(storedData);
+  todoList[index].description = mainItem.value;
+
+  localStorage.setItem('todo-list', JSON.stringify(todoList));
+  showList();
+};
