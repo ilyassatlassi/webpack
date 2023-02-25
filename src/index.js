@@ -19,7 +19,7 @@ const showList = () => {
                                   <div class = "tools">
                                   <i class="fa-solid fa-pen-to-square edit " id="edit${element.index -1}" onclick="editFunc(${element.index -1});"></i>
                                   <i class="fa-solid fa-floppy-disk save hide box" id="save${element.index -1}" onclick="saveFunc(${element.index -1});"></i>
-                                  <i id="removeicon" onclick="removeFunc(${element.index -1 });" class="fa-solid fa-trash"></i>
+                                  <i id="removeicon" onclick="removeFunc(${element.index -1});" class="fa-solid fa-trash"></i>
                                   </div>
                           </li>`;
     } else {
@@ -109,10 +109,11 @@ window.saveFunc = (index) => {
 window.removeFunc = (index) => {
   const storedData = localStorage.getItem('todo');
   todoList = JSON.parse(storedData);
+  
   todoList.splice(index, 1);
   for (let i = 0; i < todoList.length; i += 1) {
     todoList[i].index = i+1;
   }
   localStorage.setItem('todo', JSON.stringify(todoList));
-  showList();
+  showList();console.log(todoList)
 };
