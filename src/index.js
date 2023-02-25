@@ -4,7 +4,7 @@ const list = document.getElementById('listtodo');
 const add = document.getElementById('add');
 
 const completed = false;
-let index = 0;
+let index = 1;
 let todoList = [];
 
 const showList = () => {
@@ -101,7 +101,7 @@ window.saveFunc = (index) => {
   todoList = JSON.parse(storedData);
   todoList[index].description = mainItem.value;
 
-  localStorage.setItem('todo-list', JSON.stringify(todoList));
+  localStorage.setItem('todo', JSON.stringify(todoList));
   showList();
 };
 
@@ -117,20 +117,3 @@ window.removeFunc = (index) => {
   showList();
 };
 
-// Check function
-window.checkFunc = (index) => {
-  const CheckCheck = document.getElementById(`check${index}`);
-  if (CheckCheck.checked === true) {
-    const storedData = localStorage.getItem('todo');
-    todoList = JSON.parse(storedData);
-    todoList[index].completed = true;
-    localStorage.setItem('todo', JSON.stringify(todoList));
-    showList();
-  } else {
-    const storedData = localStorage.getItem('todo');
-    todoList = JSON.parse(storedData);
-    todoList[index].completed = false;
-    localStorage.setItem('todo', JSON.stringify(todoList));
-    showList();
-  }
-};
