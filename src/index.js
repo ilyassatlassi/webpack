@@ -116,4 +116,3 @@ window.removeFunc = (index) => {
   localStorage.setItem('todo', JSON.stringify(todoList));
   showList();
 };
-
