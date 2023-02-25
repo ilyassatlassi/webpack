@@ -101,7 +101,7 @@ window.saveFunc = (index) => {
   localStorage.setItem('todo-list', JSON.stringify(todoList));
   showList();
 };
-
+//
 window.removeFunc = (index) => {
   const storedData = localStorage.getItem('todo');
   todoList = JSON.parse(storedData);
