@@ -104,3 +104,15 @@ window.saveFunc = (index) => {
   localStorage.setItem('todo-list', JSON.stringify(todoList));
   showList();
 };
+
+// Remove function
+window.removeFunc = (index) => {
+  const storedData = localStorage.getItem('todo');
+  todoList = JSON.parse(storedData);
+  todoList.splice(index, 1);
+  for (let i = 0; i < todoList.length; i += 1) {
+    todoList[i].index = i;
+  }
+  localStorage.setItem('todo', JSON.stringify(todoList));
+  showList();
+};
